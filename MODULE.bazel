@@ -1,0 +1,15 @@
+bazel_dep(name = "contrib_rules_jvm", version = "0.27.0")
+bazel_dep(name = "rules_java", version = "8.6.1")
+bazel_dep(name = "rules_jvm_external", version = "6.7")
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+maven.install(
+    artifacts = [
+        "org.junit.vintage:junit-vintage-engine",
+        "org.junit.jupiter:junit-jupiter-engine",
+        "org.junit.platform:junit-platform-reporting",
+    ],
+    boms = ["org.junit:junit-bom:5.8.0"],
+    fetch_sources = True,
+)
+use_repo(maven, "maven")

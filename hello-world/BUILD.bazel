@@ -1,0 +1,17 @@
+load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_test_suite")
+load("@rules_java//java:defs.bzl", "java_binary")
+
+java_binary(
+    name = "hello-world",
+    srcs = ["src/main/java/org/Main.java"],
+    main_class = "org.Main",
+)
+
+java_test_suite(
+    name = "hello-world-tests",
+    srcs = ["src/test/java/org/MainTest.java"],
+    deps = [
+        "hello-world",
+        "@maven//:org_junit_vintage_junit_vintage_engine",
+    ] + JUNIT5_DEPS,
+)
