@@ -8,7 +8,8 @@ It used to work with Bazel for IntelliJ version `2025.02.04.0.1-api-version-243`
 
 ![](right-click-success.png)
 
-Now it is failing with Bazel for IntelliJ `2025.04.01.0.1-api-version-243`
+Now it is failing with Bazel for IntelliJ `2025.02.18.0.1-api-version-243` and later (tested up to
+`2025.04.01.0.1-api-version-243`)
 
 ![](right-click-unnamed.png)
 
